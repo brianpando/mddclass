@@ -1,0 +1,32 @@
+@startuml
+class Author{
+    string name
+    int phone_id
+}
+
+class Phone{
+    string number
+    int author_id
+}
+
+class Book{
+    string title
+    int pages
+    int author_id
+    int editorial_id
+}
+class Store{
+    string name
+    string address
+}
+
+
+class Editorial{
+    string name
+}
+
+Author "1" *-- "1" Phone
+Book "*" *-- "1" Author
+Book "*" *-- "1" Editorial
+Store "*" -- "*" Book
+@enduml
